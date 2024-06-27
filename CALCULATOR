@@ -1,0 +1,36 @@
+# simple calcutor using python 
+number1= float(input("Enter the 1st number: "))
+number2= float(input("Enter the 2nd number: "))
+
+def add():
+    return number1+number2
+def subs():
+    return number1-number2
+def mul():
+    return number1*number2
+def div():
+    if(number2 == 0):
+        print("Division by zero cann't occur !")
+    else:
+        return number1/number2
+
+#List of operations 
+print("Below are the operations you can perform: ")
+print("1. Addition")
+print("2. Substraction")
+print("3. Multiplication")
+print("4. Division")
+
+#Asking user to input their choice
+choice= input("Choose the operation to perform: ")
+if choice in ['1','2','3','4']:
+    if(choice == '1'):
+        print("Result of Addition is: ", add())
+    elif(choice == '2'):
+        print("Result of Substraction is: ", subs())
+    elif(choice == '3'):
+        print("Result of Multiplication is: ", mul())
+    elif(choice == '4'):
+        print("Result of Division is: ", div())
+else:
+    print("Please enter a valid choice :) ")
