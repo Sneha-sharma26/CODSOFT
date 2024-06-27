@@ -1,0 +1,31 @@
+# Code for Rock-Paper-Scissors Game
+
+import random
+
+def determine_winner(u_choice,c_choice):
+    if u_choice == c_choice:
+        print("It's a tie!")
+    elif (u_choice=='rock' and c_choice=='scissors') or (u_choice=='scissors' and c_choice=='paper') or (u_choice=='paper' and c_choice=='rock'):
+        print("Hurray!! YOu won")
+    else:
+        print("Oops!! Computer won")
+
+def play():
+    choices = ['rock','paper','scissors']
+    u_choice = input("Enter your choice out of rock/paper/scissors: ").lower()
+    while u_choice not in ['rock','paper','scissors']:
+        print("Please enter a vlaid choice :) ")
+        u_choice = input("Enter your choice out of rock/paper/scissors: ").lower()
+    c_choice = random.choice(choices)
+    print("Computer chooses ", c_choice)
+
+    result = determine_winner(u_choice,c_choice)
+    return result
+
+result = play()
+while True:
+    another_round = input("Do you want to play another round (yes/no): ").lower()
+    if another_round == "yes":
+        result = play()
+    else:
+        break
